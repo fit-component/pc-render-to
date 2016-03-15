@@ -4,5 +4,5 @@
 ---
 
 ````jsx
-npm install fit-render-to /* or */ fis3 install gitlab:tb-component/fit-render-to
+npm install fit-render-to
 ````

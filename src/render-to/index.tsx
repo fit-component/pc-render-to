@@ -1,8 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+import * as module from './module'
 
-export default class RenderTo extends React.Component {
-    constructor(props) {
+export default class RenderTo extends React.Component<module.PropsInterface,module.StateInterface> {
+    static defaultProps = new module.Props()
+    public state = new module.State()
+    private popups:any
+    private selectorLength:any
+
+    constructor(props:any) {
         super(props)
     }
 
@@ -43,7 +49,7 @@ export default class RenderTo extends React.Component {
 
     _renderLayer() {
         this.popups.forEach((popup) => {
-            ReactDOM.render(this.props.children, popup)
+            ReactDOM.render(this.props['children'], popup)
         })
     }
 
@@ -51,9 +57,4 @@ export default class RenderTo extends React.Component {
     render() {
         return null
     }
-}
-
-RenderTo.defaultProps = {
-    // @desc 容器对象
-    selector: 'body'
 }

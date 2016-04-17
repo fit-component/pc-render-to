@@ -15,23 +15,22 @@ export default class RenderTo extends React.Component<module.PropsInterface,modu
     componentDidMount() {
         this.popups = []
         let selector = document.querySelectorAll(this.props.selector)
-        Array.prototype.slice.call(selector).forEach((parent) => {
+        Array.prototype.slice.call(selector).forEach((parent:any) => {
             let popup = document.createElement('div')
             parent.appendChild(popup)
             this.popups.push(popup)
         })
 
-        this._renderLayer();
+        this.renderLayer()
         this.selectorLength = selector.length
     }
 
     componentDidUpdate() {
-        this._renderLayer();
+        this.renderLayer()
     }
 
-
     componentWillUnmount() {
-        this.popups.forEach((popup) => {
+        this.popups.forEach((popup:any) => {
             ReactDOM.unmountComponentAtNode(popup)
         })
         let selector = document.querySelectorAll(this.props.selector)
@@ -40,21 +39,19 @@ export default class RenderTo extends React.Component<module.PropsInterface,modu
             console.warn('selector amount had been changed!')
         }
 
-        Array.prototype.slice.call(document.querySelectorAll(this.props.selector)).forEach((parent) => {
+        Array.prototype.slice.call(document.querySelectorAll(this.props.selector)).forEach((parent:any) => {
             let popup = this.popups.shift()
             parent.removeChild(popup)
         })
     }
 
-
-    _renderLayer() {
-        this.popups.forEach((popup) => {
-            ReactDOM.render(this.props['children'], popup)
+    renderLayer() {
+        this.popups.forEach((popup:any) => {
+            ReactDOM.render(this.props.children, popup, null)
         })
     }
 
-
-    render() {
+    render():any {
         return null
     }
 }

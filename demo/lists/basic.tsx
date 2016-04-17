@@ -1,6 +1,6 @@
 import * as React from 'react'
 import RenderTo from '../../src'
-import Button from '../../../../pc/button'
+import Button from '../../../../pc/button/src'
 
 export default class Demo extends React.Component<any,any> {
     constructor(props:any) {

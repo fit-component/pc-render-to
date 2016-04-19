@@ -1,6 +1,6 @@
 {
   "name": "fit-render-to",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "render component to any dom",
   "main": "lib/index.js",
   "scripts": {

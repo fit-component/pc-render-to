@@ -1,6 +1,6 @@
 {
   "name": "fit-render-to",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "description": "render component to any dom",
   "main": "lib/index.js",
   "scripts": {
@@ -12,9 +12,6 @@
   },
   "author": "tieba",
   "license": "ISC",
-  "dependencies": {
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0"
-  },
+  "dependencies": {},
   "typings": "lib/index.d.ts"
 }
